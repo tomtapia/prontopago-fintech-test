@@ -1,0 +1,12 @@
+{
+  "name": "prontopago-fintech",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter api --filter web dev",
+    "build": "pnpm --recursive build",
+    "test": "pnpm --recursive test --run",
+    "lint": "pnpm --recursive lint"
+  }
+}
