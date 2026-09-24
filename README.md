@@ -22,6 +22,8 @@ enforced server-side: `user`s can only see their own score, `admin`s can query
 any RUT. Scores are reproducible per RUT via a normalized in-memory cache, so
 demos and tests never flake.
 
+[![System architecture (dark)](docs/architecture-dark.png)](docs/architecture-dark.html)
+
 ## Key Features
 
 - **JWT auth + RBAC out of the box** — HS256 tokens (`sub`, `role`, `rut` for
@@ -106,6 +108,8 @@ curl -s -w "\nHTTP:%{http_code}\n" http://localhost:3000/score/12.345.678-5 \
 # {"error":{"code":"OWN_RUT_ONLY","message":"Forbidden: can only query own RUT"}}
 # HTTP:403
 ```
+
+[![Login and score flow (dark)](docs/sequence-dark.png)](docs/sequence-dark.html)
 
 **Mock users:**
 
