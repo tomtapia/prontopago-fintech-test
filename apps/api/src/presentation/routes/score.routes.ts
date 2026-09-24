@@ -1,10 +1,10 @@
-import { Router } from 'express';
+import { Router, type Router as ExpressRouter } from 'express';
 import { authenticate } from '../middlewares/authenticate.js';
 import { authorizeScore } from '../middlewares/authorizeScore.js';
 import { scoreParamsSchema } from '../schemas.js';
 import { queryScore } from '../../application/score.service.js';
 
-export const scoreRouter = Router();
+export const scoreRouter: ExpressRouter = Router();
 
 scoreRouter.get('/score/:rut', authenticate, authorizeScore, (req, res, next) => {
   const parsed = scoreParamsSchema.safeParse(req.params);

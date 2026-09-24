@@ -1,11 +1,11 @@
-import express from 'express';
+import express, { type Express } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import { authRouter } from './presentation/routes/auth.routes.js';
 import { scoreRouter } from './presentation/routes/score.routes.js';
 import { errorHandler, notFound } from './presentation/middlewares/errorHandler.js';
 
-export function createApp() {
+export function createApp(): Express {
   const app = express();
   app.use(helmet());
   app.use(cors({ origin: 'http://localhost:5173' }));

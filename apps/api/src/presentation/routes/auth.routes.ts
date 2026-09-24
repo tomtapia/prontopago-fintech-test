@@ -1,9 +1,9 @@
-import { Router } from 'express';
+import { Router, type Router as ExpressRouter } from 'express';
 import rateLimit from 'express-rate-limit';
 import { login } from '../../application/auth.service.js';
 import { loginSchema } from '../schemas.js';
 
-export const authRouter = Router();
+export const authRouter: ExpressRouter = Router();
 
 const loginLimiter = rateLimit({ windowMs: 5 * 60 * 1000, limit: 60, standardHeaders: 'draft-7' });
 
