@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm --parallel --filter api --filter web dev",
     "build": "pnpm --recursive build",
-    "test": "pnpm --recursive test --run",
+    "test": "pnpm --recursive test",
     "lint": "pnpm --recursive lint"
   }
 }
